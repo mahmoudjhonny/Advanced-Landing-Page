@@ -52,6 +52,7 @@ body {
   margin: 0;
   color: #666;
   padding-top: 5px;
+  font-style: 14px;
 }
 
 .settings-box .settings-container .option-box .colors-list {
@@ -96,6 +97,31 @@ body {
 .settings-box .settings-container .option-box .colors-list li.active {
   border-color: #fff;
   opacity: 1;
+}
+
+.settings-box .settings-container .option-box .random-background span {
+  width: 50px;
+  background-color: var(--main-color);
+  color: #fff;
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-weight: bold;
+  opacity: 0.5;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.settings-box .settings-container .random-background span.active {
+  opacity: 1;
+}
+
+.settings-box .settings-container .option-box .yes {
+}
+
+.settings-box .settings-container .option-box .no {
 }
 /* end settings box */
 
