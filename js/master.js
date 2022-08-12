@@ -97,8 +97,29 @@ const randomizeImgs = () => {
       //Change background image url
       landingPage.style.backgroundImage =
         'url("./imgs/' + imgs[randomNum] + '")';
-    }, 1000);
+    }, 10000);
   }
 };
 
 randomizeImgs();
+
+// Select Skills selector
+let ourSkills = document.querySelector(".skills");
+window.onscroll = function () {
+  // skills Offset Top
+  let skillsOffsetTop = ourSkills.offsetTop;
+  // skills Outer height
+  let skillsOuterHeight = ourSkills.offsetHeight;
+  // window height
+  let windowHeight = this.innerHeight;
+  // window scroll top
+  let windowScrollTop = this.scrollY;
+  if (windowScrollTop > skillsOffsetTop + skillsOuterHeight - windowHeight) {
+    let allSkills = document.querySelectorAll(
+      ".skill-box .skill-progress span"
+    );
+    allSkills.forEach((skill) => {
+      skill.style.width = skill.dataset.progress;
+    });
+  }
+};
