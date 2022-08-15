@@ -123,3 +123,50 @@ window.onscroll = function () {
     });
   }
 };
+
+// Gallery Section
+let ourGalleryImg = document.querySelectorAll(".gallery img");
+ourGalleryImg.forEach((img) => {
+  img.addEventListener("click", (e) => {
+    let overlay = document.createElement("div");
+    overlay.className = "popup-overlay";
+    document.body.appendChild(overlay);
+    // Create pop Up
+    let popup = document.createElement("div");
+    popup.className = "popUp-box";
+    // create the image
+    let image = document.createElement("img");
+    image.src = img.src;
+    // Add image on popup
+    popup.appendChild(image);
+    // Add popUp on overlay
+    overlay.appendChild(popup);
+    // Add heading for images
+    if (img.alt !== null) {
+      // create heading
+      let image_heading = document.createElement("h3");
+      // create text for heading
+      let image_text = document.createTextNode(img.alt);
+      // Append the text to the heading
+      image_heading.appendChild(image_text);
+      // Append image heading to popUp
+      popup.appendChild(image_heading);
+    }
+    // Create close span
+    let closeButton = document.createElement("span");
+    // Create the close Button Span
+    let closeButtonText = document.createTextNode("X");
+    // Append Text to close Button
+    closeButton.appendChild(closeButtonText);
+    // Add Class to close Button
+    closeButton.className = "close_btn";
+    // Add close Button to overlay
+    overlay.appendChild(closeButton);
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.className === "close_btn") {
+    e.target.parentNode.remove();
+  }
+});
