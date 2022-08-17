@@ -127,7 +127,7 @@ window.onscroll = function () {
 // Gallery Section
 let ourGalleryImg = document.querySelectorAll(".gallery img");
 ourGalleryImg.forEach((img) => {
-  img.addEventListener("click", (e) => {
+  img.addEventListener("click", () => {
     let overlay = document.createElement("div");
     overlay.className = "popup-overlay";
     document.body.appendChild(overlay);
